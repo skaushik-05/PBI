@@ -1,0 +1,110 @@
+{
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Category": [
+      1
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "Weekly Status.Est. End Date.Variation.Date Hierarchy.Month",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Sum of Amount",
+        "Name": "Sum(Weekly Status.Amount)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Month",
+        "Name": "Weekly Status.Est. End Date.Variation.Date Hierarchy.Month",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 1,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Sum of Amount",
+      "queryName": "Sum(Weekly Status.Amount)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Weekly Status"
+                }
+              },
+              "Property": "Amount"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Month",
+      "queryName": "Weekly Status.Est. End Date.Variation.Date Hierarchy.Month",
+      "roles": {
+        "Category": true
+      },
+      "sort": 1,
+      "sortOrder": 0,
+      "type": {
+        "category": "Months",
+        "underlyingType": 131585
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "PropertyVariationSource": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Weekly Status"
+                    }
+                  },
+                  "Name": "Variation",
+                  "Property": "Est. End Date"
+                }
+              },
+              "Hierarchy": "Date Hierarchy"
+            }
+          },
+          "Level": "Month"
+        }
+      }
+    }
+  ]
+}
