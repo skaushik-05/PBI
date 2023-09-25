@@ -138,6 +138,19 @@
             }
           }
         }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Amount by Week and Work At Risk '"
+                }
+              }
+            }
+          }
+        }
       ]
     }
   }
