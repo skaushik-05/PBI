@@ -1,0 +1,100 @@
+{
+  "name": "0c4c1fe83a8a39664ea0",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 349.60950764006793,
+        "z": 3001,
+        "width": 465.73853989813244,
+        "height": 338.60780984719867,
+        "tabOrder": 3001
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "hundredPercentStackedBarChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "File Guidelines.Col Name",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(Sheet1.Amount)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "f",
+          "Entity": "File Guidelines",
+          "Type": 0
+        },
+        {
+          "Name": "s",
+          "Entity": "Sheet1",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "f"
+              }
+            },
+            "Property": "Col Name"
+          },
+          "Name": "File Guidelines.Col Name",
+          "NativeReferenceName": "Col Name"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "s"
+                  }
+                },
+                "Property": "Amount"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Sheet1.Amount)",
+          "NativeReferenceName": "Sum of Amount"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "s"
+                    }
+                  },
+                  "Property": "Amount"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}
