@@ -1,0 +1,182 @@
+{
+  "name": "fe99372f32dd7ba077d4",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 435.17826825127338,
+        "y": 360.6112054329372,
+        "z": 3001,
+        "width": 435.17826825127338,
+        "height": 338.60780984719867,
+        "tabOrder": 3001
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sheet4.Est. End Date.Variation.Date Hierarchy.Year"
+        },
+        {
+          "queryRef": "Sheet4.Est. End Date.Variation.Date Hierarchy.Quarter"
+        },
+        {
+          "queryRef": "Sheet4.Est. End Date.Variation.Date Hierarchy.Month"
+        },
+        {
+          "queryRef": "Sheet4.Est. End Date.Variation.Date Hierarchy.Day"
+        },
+        {
+          "queryRef": "Sum(Sheet4.Amount)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "s",
+          "Entity": "Sheet4",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Est. End Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          },
+          "Name": "Sheet4.Est. End Date.Variation.Date Hierarchy.Year",
+          "NativeReferenceName": "Est. End Date Year"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Est. End Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Quarter"
+          },
+          "Name": "Sheet4.Est. End Date.Variation.Date Hierarchy.Quarter",
+          "NativeReferenceName": "Est. End Date Quarter"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Est. End Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          },
+          "Name": "Sheet4.Est. End Date.Variation.Date Hierarchy.Month",
+          "NativeReferenceName": "Est. End Date Month"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Est. End Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Day"
+          },
+          "Name": "Sheet4.Est. End Date.Variation.Date Hierarchy.Day",
+          "NativeReferenceName": "Est. End Date Day"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "s"
+                  }
+                },
+                "Property": "Amount"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Sheet4.Amount)",
+          "NativeReferenceName": "Sum of Amount"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular representation'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
