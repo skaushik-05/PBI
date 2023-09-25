@@ -1,0 +1,96 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "File Guidelines",
+              "Type": 0
+            },
+            {
+              "Name": "s",
+              "Entity": "Sheet1",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "f"
+                  }
+                },
+                "Property": "Col Name"
+              },
+              "Name": "File Guidelines.Col Name",
+              "NativeReferenceName": "Col Name"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "s"
+                      }
+                    },
+                    "Property": "Amount"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Sheet1.Amount)",
+              "NativeReferenceName": "Sum of Amount"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "s"
+                        }
+                      },
+                      "Property": "Amount"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}
